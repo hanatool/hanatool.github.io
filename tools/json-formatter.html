@@ -1,0 +1,24 @@
+---
+layout: default
+title: JSON Formatter
+---
+
+<h2>JSON Formatter</h2>
+
+<textarea id="jsonInput" placeholder="Paste JSON here"></textarea>
+
+<button onclick="formatJSON()">Format JSON</button>
+
+<textarea id="jsonOutput"></textarea>
+
+<script>
+function formatJSON() {
+  try {
+    const input = document.getElementById('jsonInput').value;
+    const parsed = JSON.parse(input);
+    document.getElementById('jsonOutput').value = JSON.stringify(parsed, null, 2);
+  } catch (e) {
+    alert('Invalid JSON');
+  }
+}
+</script>

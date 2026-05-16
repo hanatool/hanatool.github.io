@@ -1,0 +1,9 @@
+title: Web Tools
+email: admin@example.com
+description: Free online tools built with Jekyll
+baseurl: ""
+url: "https://example.com"
+
+theme: minima
+plugins:
+  - jekyll-feed
