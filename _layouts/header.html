@@ -1,12 +1,32 @@
-<header class="header">
+<!-- HEADER -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container">
-    <h1>{{ site.title }}</h1>
 
-    <nav>
-      <a href="/">Home</a>
-      <a href="/tools/json-formatter">JSON Formatter</a>
-      <a href="/tools/password-generator">Password Generator</a>
-      <a href="/tools/qr-generator">QR Generator</a>
-    </nav>
+    <a class="navbar-brand fw-bold" href="#">
+      <i class="fa-solid fa-toolbox"></i>
+      WebTools
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#tools">Tools</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+
+    </div>
   </div>
-</header>
+</nav>

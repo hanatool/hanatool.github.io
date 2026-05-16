@@ -1,21 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <title>Web Tools Modern</title>
+
+  <meta name="description" content="Free online tools modern dan cepat">
+  <meta name="keywords" content="web tools, online tools, json formatter">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
 </head>
+
 <body>
 
-{% include header.html %}
+  <!-- HEADER -->
+  {% include header.html %}
 
-<main class="container">
-  {{ content }}
-</main>
+  <!-- IKLAN TENGAH -->
+  <section class="py-5">
+    <div class="container">
 
-{% include footer.html %}
+      <main class="container">
+        {{ content }}
+      </main>
 
-<script src="/assets/js/app.js"></script>
+      <div class="ads-box">
+        <h5>Slot Iklan Responsive</h5>
+        <p>Pasang kode AdSense di sini</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+
+      <h2 class="section-title">Why Choose Us?</h2>
+
+      <div class="row g-4 mt-4">
+
+        <div class="col-md-4">
+          <div class="tool-card">
+            <i class="fa-solid fa-bolt fa-3x mb-4 text-primary"></i>
+            <h4>Fast</h4>
+            <p>Optimized dan loading super cepat.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="tool-card">
+            <i class="fa-solid fa-mobile-screen fa-3x mb-4 text-primary"></i>
+            <h4>Responsive</h4>
+            <p>Perfect di mobile dan desktop.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="tool-card">
+            <i class="fa-solid fa-shield-halved fa-3x mb-4 text-primary"></i>
+            <h4>Secure</h4>
+            <p>Data aman dan tidak disimpan.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  {% include footer.html %}
+
+  <script src="/assets/js/app.js"></script>
 </body>
+
 </html>
