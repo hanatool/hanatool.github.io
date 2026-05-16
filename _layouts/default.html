@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Web Tools Modern</title>
+  <title>{{ page.title }} | Web Tools Modern</title>
 
+  <!-- SEO -->
   <meta name="description" content="Free online tools modern dan cepat">
   <meta name="keywords" content="web tools, online tools, json formatter">
+  <meta name="author" content="WebTools">
 
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 
@@ -20,62 +29,150 @@
   <!-- HEADER -->
   {% include header.html %}
 
-  <!-- IKLAN TENGAH -->
-  <section class="py-5">
-    <div class="container">
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
 
-      <main class="container">
+    <!-- HERO -->
+    <section class="hero-section text-center">
+
+      <div class="container">
+
+        <h1 class="hero-title">
+          Modern Web Tools
+        </h1>
+
+        <p class="hero-subtitle">
+          Free online tools cepat, modern, responsive, dan powerful.
+        </p>
+
+        <div class="hero-search mt-4">
+          <input
+            type="text"
+            class="form-control search-input"
+            placeholder="Cari tools...">
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ADS TOP -->
+    <section class="py-4">
+
+      <div class="container">
+
+        <div class="ads-box">
+
+          <div>
+            <i class="fa-solid fa-rectangle-ad fa-2x mb-3"></i>
+            <h5>Slot Iklan Responsive</h5>
+            <p class="mb-0">
+              Pasang kode Google AdSense / Banner Sponsor di sini
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGE CONTENT -->
+    <section class="py-5">
+
+      <div class="container">
+
         {{ content }}
-      </main>
-
-      <div class="ads-box">
-        <h5>Slot Iklan Responsive</h5>
-        <p>Pasang kode AdSense di sini</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
-    <div class="container text-center">
-
-      <h2 class="section-title">Why Choose Us?</h2>
-
-      <div class="row g-4 mt-4">
-
-        <div class="col-md-4">
-          <div class="tool-card">
-            <i class="fa-solid fa-bolt fa-3x mb-4 text-primary"></i>
-            <h4>Fast</h4>
-            <p>Optimized dan loading super cepat.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="tool-card">
-            <i class="fa-solid fa-mobile-screen fa-3x mb-4 text-primary"></i>
-            <h4>Responsive</h4>
-            <p>Perfect di mobile dan desktop.</p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="tool-card">
-            <i class="fa-solid fa-shield-halved fa-3x mb-4 text-primary"></i>
-            <h4>Secure</h4>
-            <p>Data aman dan tidak disimpan.</p>
-          </div>
-        </div>
 
       </div>
 
-    </div>
-  </section>
+    </section>
 
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+
+      <div class="container text-center">
+
+        <h2 class="section-title">
+          Why Choose Us?
+        </h2>
+
+        <div class="row g-4 mt-4">
+
+          <!-- FAST -->
+          <div class="col-md-4">
+
+            <div class="tool-card h-100">
+
+              <div class="feature-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+
+              <h4>Fast</h4>
+
+              <p>
+                Optimized dan loading super cepat untuk semua device.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- RESPONSIVE -->
+          <div class="col-md-4">
+
+            <div class="tool-card h-100">
+
+              <div class="feature-icon">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+
+              <h4>Responsive</h4>
+
+              <p>
+                Perfect di mobile, tablet, dan desktop modern.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- SECURE -->
+          <div class="col-md-4">
+
+            <div class="tool-card h-100">
+
+              <div class="feature-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+
+              <h4>Secure</h4>
+
+              <p>
+                Data aman dan diproses langsung di browser pengguna.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   {% include footer.html %}
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- App JS -->
   <script src="/assets/js/app.js"></script>
+
 </body>
 
 </html>
