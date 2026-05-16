@@ -1,61 +1,151 @@
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top border-bottom border-secondary-subtle shadow-sm py-3">
+
   <div class="container">
 
     <!-- LOGO -->
-    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="/">
-      <div class="logo-box">
-        <i class="fa-solid fa-toolbox"></i>
-      </div>
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
 
-      <span class="brand-text">WebTools</span>
+      <span class="bg-primary bg-gradient rounded-3 d-flex align-items-center justify-content-center"
+        style="width:45px;height:45px;">
+
+        <i class="fa-solid fa-toolbox text-white"></i>
+
+      </span>
+
+      <span class="fs-4">
+        WebTools
+      </span>
+
     </a>
 
-    <!-- MOBILE BUTTON -->
-    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- MOBILE TOGGLE -->
+    <button
+      class="navbar-toggler border-0 shadow-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
 
-      <i class="fa-solid fa-bars-staggered text-white"></i>
+      <span class="navbar-toggler-icon"></span>
+
     </button>
 
     <!-- MENU -->
     <div class="collapse navbar-collapse" id="navbarNav">
 
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+      <!-- MENU LEFT -->
+      <ul class="navbar-nav mx-auto gap-lg-2 mt-4 mt-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link active" href="#">
+          <a class="nav-link active px-3 rounded-pill" href="#">
+            <i class="fa-solid fa-house me-2"></i>
             Home
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#tools">
+        <li class="nav-item dropdown">
+
+          <a
+            class="nav-link dropdown-toggle px-3 rounded-pill"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown">
+
+            <i class="fa-solid fa-toolbox me-2"></i>
             Tools
           </a>
+
+          <ul class="dropdown-menu dropdown-menu-dark border-0 shadow-lg rounded-4 p-2">
+
+            <li>
+              <a class="dropdown-item rounded-3 py-2" href="#">
+                JSON Formatter
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item rounded-3 py-2" href="#">
+                Password Generator
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item rounded-3 py-2" href="#">
+                QR Generator
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item rounded-3 py-2" href="#">
+                Image Compressor
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item rounded-3 py-2" href="#">
+                Word Counter
+              </a>
+            </li>
+
+          </ul>
+
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#about">
+          <a class="nav-link px-3 rounded-pill" href="#about">
+            <i class="fa-solid fa-circle-info me-2"></i>
             About
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#contact">
+          <a class="nav-link px-3 rounded-pill" href="#contact">
+            <i class="fa-solid fa-envelope me-2"></i>
             Contact
-          </a>
-        </li>
-
-        <!-- BUTTON -->
-        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-          <a href="#tools" class="btn btn-primary px-4 rounded-pill fw-semibold">
-            Explore Tools
           </a>
         </li>
 
       </ul>
 
+      <!-- RIGHT -->
+      <div class="d-flex align-items-center gap-3 mt-4 mt-lg-0">
+
+        <!-- SEARCH -->
+        <form class="d-none d-lg-flex">
+
+          <div class="input-group">
+
+            <span class="input-group-text bg-secondary border-secondary text-white">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+
+            <input
+              type="text"
+              class="form-control bg-secondary border-secondary text-white"
+              placeholder="Search tools...">
+
+          </div>
+
+        </form>
+
+        <!-- BUTTON -->
+        <a href="#tools" class="btn btn-primary rounded-pill px-4 fw-semibold">
+
+          <i class="fa-solid fa-rocket me-2"></i>
+          Explore
+
+        </a>
+
+      </div>
+
     </div>
+
   </div>
+
 </nav>
+
+<!-- SPACER -->
+<div style="height:90px;"></div>

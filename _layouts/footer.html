@@ -1,48 +1,85 @@
 <!-- FOOTER -->
-<footer class="footer" id="contact">
+<footer class="bg-dark text-light pt-5 border-top border-secondary-subtle" id="contact">
 
   <div class="container">
 
     <!-- TOP FOOTER -->
-    <div class="row g-5">
+    <div class="row g-5 pb-5">
 
       <!-- BRAND -->
       <div class="col-lg-4">
 
-        <div class="footer-brand d-flex align-items-center gap-3 mb-4">
+        <a href="/" class="text-decoration-none text-light">
 
-          <div class="footer-logo">
-            <i class="fa-solid fa-toolbox"></i>
+          <div class="d-flex align-items-center gap-3 mb-4">
+
+            <!-- LOGO -->
+            <div
+              class="bg-primary bg-gradient rounded-4 d-flex align-items-center justify-content-center shadow"
+              style="width:60px;height:60px;">
+
+              <i class="fa-solid fa-toolbox fs-4 text-white"></i>
+
+            </div>
+
+            <!-- TITLE -->
+            <div>
+
+              <h3 class="fw-bold mb-1">
+                WebTools
+              </h3>
+
+              <small class="text-secondary">
+                Modern Online Tools
+              </small>
+
+            </div>
+
           </div>
 
-          <h3 class="mb-0">
-            WebTools
-          </h3>
+        </a>
 
-        </div>
+        <p class="text-secondary lh-lg">
 
-        <p class="footer-desc">
-          Modern online tools platform dengan desain premium,
-          responsive, cepat, dan powerful untuk semua kebutuhan.
+          Platform web tools modern dengan desain premium,
+          responsive, cepat, SEO friendly, dan powerful
+          untuk kebutuhan developer maupun umum.
+
         </p>
 
         <!-- SOCIAL -->
-        <div class="social-links d-flex gap-3 mt-4">
+        <div class="d-flex gap-3 mt-4">
 
-          <a href="#" class="social-icon">
+          <a href="#"
+            class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+            style="width:45px;height:45px;">
+
             <i class="fab fa-facebook-f"></i>
+
           </a>
 
-          <a href="#" class="social-icon">
+          <a href="#"
+            class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+            style="width:45px;height:45px;">
+
             <i class="fab fa-instagram"></i>
+
           </a>
 
-          <a href="#" class="social-icon">
+          <a href="#"
+            class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+            style="width:45px;height:45px;">
+
             <i class="fab fa-twitter"></i>
+
           </a>
 
-          <a href="#" class="social-icon">
+          <a href="#"
+            class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+            style="width:45px;height:45px;">
+
             <i class="fab fa-github"></i>
+
           </a>
 
         </div>
@@ -52,32 +89,36 @@
       <!-- QUICK LINKS -->
       <div class="col-lg-2 col-md-6">
 
-        <h5 class="footer-title">
+        <h5 class="fw-bold mb-4">
           Quick Links
         </h5>
 
-        <ul class="footer-links list-unstyled">
+        <ul class="list-unstyled d-grid gap-3">
 
           <li>
-            <a href="/">
+            <a href="/" class="text-decoration-none text-secondary">
+              <i class="fa-solid fa-house me-2"></i>
               Home
             </a>
           </li>
 
           <li>
-            <a href="#tools">
+            <a href="#tools" class="text-decoration-none text-secondary">
+              <i class="fa-solid fa-toolbox me-2"></i>
               Tools
             </a>
           </li>
 
           <li>
-            <a href="#about">
+            <a href="#about" class="text-decoration-none text-secondary">
+              <i class="fa-solid fa-circle-info me-2"></i>
               About
             </a>
           </li>
 
           <li>
-            <a href="#contact">
+            <a href="#contact" class="text-decoration-none text-secondary">
+              <i class="fa-solid fa-envelope me-2"></i>
               Contact
             </a>
           </li>
@@ -89,65 +130,76 @@
       <!-- TOOLS -->
       <div class="col-lg-3 col-md-6">
 
-        <h5 class="footer-title">
+        <h5 class="fw-bold mb-4">
           Popular Tools
         </h5>
 
-        <ul class="footer-links list-unstyled">
+        <div class="d-grid gap-3">
 
-          <li>
-            <a href="#">
-              JSON Formatter
-            </a>
-          </li>
+          <a href="#" class="btn btn-outline-secondary text-start rounded-4 py-3">
 
-          <li>
-            <a href="#">
-              QR Generator
-            </a>
-          </li>
+            <i class="fa-solid fa-code me-2"></i>
+            JSON Formatter
 
-          <li>
-            <a href="#">
-              Password Generator
-            </a>
-          </li>
+          </a>
 
-          <li>
-            <a href="#">
-              Image Compressor
-            </a>
-          </li>
+          <a href="#" class="btn btn-outline-secondary text-start rounded-4 py-3">
 
-        </ul>
+            <i class="fa-solid fa-qrcode me-2"></i>
+            QR Generator
+
+          </a>
+
+          <a href="#" class="btn btn-outline-secondary text-start rounded-4 py-3">
+
+            <i class="fa-solid fa-lock me-2"></i>
+            Password Generator
+
+          </a>
+
+          <a href="#" class="btn btn-outline-secondary text-start rounded-4 py-3">
+
+            <i class="fa-solid fa-image me-2"></i>
+            Image Compressor
+
+          </a>
+
+        </div>
 
       </div>
 
       <!-- NEWSLETTER -->
       <div class="col-lg-3">
 
-        <h5 class="footer-title">
+        <h5 class="fw-bold mb-4">
           Newsletter
         </h5>
 
-        <p class="footer-desc-small">
-          Subscribe untuk update tools terbaru.
+        <p class="text-secondary">
+
+          Subscribe untuk mendapatkan update tools terbaru,
+          fitur baru, dan tips developer.
+
         </p>
 
-        <form class="newsletter-form mt-4">
+        <!-- FORM -->
+        <form class="mt-4">
 
-          <div class="input-group">
+          <div class="mb-3">
 
             <input
               type="email"
-              class="form-control footer-input"
-              placeholder="Email address">
-
-            <button class="btn btn-primary px-4" type="submit">
-              Join
-            </button>
+              class="form-control bg-secondary-subtle border-0 rounded-4 py-3"
+              placeholder="Enter your email">
 
           </div>
+
+          <button class="btn btn-primary w-100 rounded-4 py-3 fw-semibold">
+
+            <i class="fa-solid fa-paper-plane me-2"></i>
+            Subscribe Now
+
+          </button>
 
         </form>
 
@@ -156,47 +208,59 @@
     </div>
 
     <!-- ADS -->
-    <div class="footer-ads mt-5">
+    <div class="row pb-5">
 
-      <div class="ads-box">
+      <div class="col-12">
 
-        <i class="fa-solid fa-rectangle-ad fa-2x mb-3"></i>
+        <div class="bg-secondary bg-opacity-10 border border-secondary-subtle rounded-5 p-5 text-center">
 
-        <h6>
-          Footer Ads Space
-        </h6>
+          <i class="fa-solid fa-rectangle-ad fa-3x text-primary mb-4"></i>
 
-        <p class="mb-0">
-          Slot Google AdSense / Sponsor
-        </p>
+          <h4 class="fw-bold">
+            Ads Space
+          </h4>
+
+          <p class="text-secondary mb-0">
+
+            Slot Google AdSense / Sponsor Banner 970x250
+
+          </p>
+
+        </div>
 
       </div>
 
     </div>
 
     <!-- BOTTOM -->
-    <div class="footer-bottom">
+    <div class="border-top border-secondary-subtle py-4">
 
-      <div class="row align-items-center">
+      <div class="row align-items-center g-3">
 
+        <!-- COPYRIGHT -->
         <div class="col-md-6 text-center text-md-start">
 
-          <p class="mb-0">
-            © 2026 WebTools. All Rights Reserved.
+          <p class="mb-0 text-secondary">
+
+            © 2026 WebTools. All rights reserved.
+
           </p>
 
         </div>
 
+        <!-- LINKS -->
         <div class="col-md-6 text-center text-md-end">
 
-          <a href="#" class="footer-bottom-link">
+          <a href="#" class="text-decoration-none text-secondary me-3">
+
             Privacy Policy
+
           </a>
 
-          <span class="mx-2">|</span>
+          <a href="#" class="text-decoration-none text-secondary">
 
-          <a href="#" class="footer-bottom-link">
-            Terms
+            Terms & Conditions
+
           </a>
 
         </div>
