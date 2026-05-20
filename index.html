@@ -1,127 +1,157 @@
 ---
 layout: default
-title: Home
 ---
 
-<!-- MAIN CONTENT -->
-<main class="main-content">
+{% assign now = site.time | date: "%s" %}
 
-  <!-- HERO -->
-  <section class="hero-section text-center">
+<div class="row g-3" id="post-container">
 
-    <div class="container">
+  {% assign visible_count = 0 %}
 
-      <h1 class="hero-title">
-        Modern Web Tools
-      </h1>
+  {% for post in paginator.posts %}
 
-      <p class="hero-subtitle">
-        Free online tools cepat, modern, responsive, dan powerful.
-      </p>
+  {% assign publish_time = post.publish_at | date: "%s" %}
 
-      <div class="hero-search mt-4">
-        <input type="text" class="form-control search-input" placeholder="Cari tools...">
-      </div>
+  {% if post.publish_at == nil or publish_time <= now %}
 
-    </div>
+  {% assign visible_count = visible_count | plus: 1 %}
 
-  </section>
+  <div class="col-12 col-md-6 col-lg-4 post-item" data-category="{{ post.categories | join: ' ' }}">
 
-  <!-- ADS TOP -->
-  <section class="py-4">
+    <div class="card border border-1 bg-light h-100 card-hover shadow-none">
 
-    <div class="container">
+      <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
 
-      <div class="ads-box">
+        {% if post.image %}
+        <div class="overflow-hidden position-relative">
 
-        <div>
-          <i class="fa-solid fa-rectangle-ad fa-2x mb-3"></i>
-          <h5>Slot Iklan Responsive</h5>
-          <p class="mb-0">
-            Pasang kode Google AdSense / Banner Sponsor di sini
+          {% assign post_time = post.date | date: "%s" %}
+          {% assign diff = now | minus: post_time %}
+
+          {% if diff < 604800 %}
+          <span class="badge bg-danger position-absolute m-2">NEW</span>
+          {% endif %}
+
+          <img src="{{ post.image | relative_url }}" class="card-img-top" style="aspect-ratio: 4/3; object-fit: cover;"
+            loading="lazy">
+        </div>
+        {% endif %}
+
+        <div class="card-body">
+          <h4 class="fw-semibold mb-2 text-capitalize">
+            {{ post.title }}
+          </h4>
+
+          <small class="text-muted d-block mb-2">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </small>
+
+          <p class="excerpt">
+            {{ post.excerpt | strip_html | truncate: 100 }}
           </p>
         </div>
 
-      </div>
+      </a>
 
     </div>
 
-  </section>
+  </div>
 
+  {% endif %}
 
+  {% endfor %}
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
+  {% if visible_count == 0 %}
+  <div class="col-12 text-center text-muted py-5">
+    No posts available yet.
+  </div>
+  {% endif %}
 
-    <div class="container text-center">
+</div>
 
-      <h2 class="section-title">
-        Why Choose Us?
-      </h2>
+<!-- PAGINATION -->
+<div class="container mt-5">
 
-      <div class="row g-4 mt-4">
+  {% if paginator.total_pages > 1 %}
 
-        <!-- FAST -->
-        <div class="col-md-4">
+  <nav>
+    <ul class="pagination justify-content-center">
 
-          <div class="tool-card h-100">
+      <!-- PREV -->
+      {% if paginator.previous_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">&laquo;</span>
+      </li>
+      {% endif %}
 
-            <div class="feature-icon">
-              <i class="fa-solid fa-bolt"></i>
-            </div>
+      {% assign total = paginator.total_pages %}
+      {% assign current = paginator.page %}
+      {% assign delta = 2 %}
 
-            <h4>Fast</h4>
+      {% assign start = current | minus: delta %}
+      {% assign end = current | plus: delta %}
 
-            <p>
-              Optimized dan loading super cepat untuk semua device.
-            </p>
+      {% if start < 1 %}{% assign start = 1 %}{% endif %}
+      {% if end > total %}{% assign end = total %}{% endif %}
 
-          </div>
+      {% if start > 1 %}
+      <li class="page-item">
+        <a class="page-link" href="{{ '/' | relative_url }}">1</a>
+      </li>
 
-        </div>
+      {% if start > 2 %}
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      {% endif %}
+      {% endif %}
 
-        <!-- RESPONSIVE -->
-        <div class="col-md-4">
+      {% for page in (start..end) %}
+      {% if page == current %}
+      <li class="page-item active">
+        <span class="page-link">{{ page }}</span>
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+          {{ page }}
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
 
-          <div class="tool-card h-100">
+      {% if end < total %}
+      {% if end < total | minus: 1 %}
+      <li class="page-item disabled">
+        <span class="page-link">...</span>
+      </li>
+      {% endif %}
 
-            <div class="feature-icon">
-              <i class="fa-solid fa-mobile-screen"></i>
-            </div>
+      <li class="page-item">
+        <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', total }}">
+          {{ total }}
+        </a>
+      </li>
+      {% endif %}
 
-            <h4>Responsive</h4>
+      <!-- NEXT -->
+      {% if paginator.next_page %}
+      <li class="page-item">
+        <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
+      </li>
+      {% else %}
+      <li class="page-item disabled">
+        <span class="page-link">&raquo;</span>
+      </li>
+      {% endif %}
 
-            <p>
-              Perfect di mobile, tablet, dan desktop modern.
-            </p>
+    </ul>
+  </nav>
 
-          </div>
+  {% endif %}
 
-        </div>
-
-        <!-- SECURE -->
-        <div class="col-md-4">
-
-          <div class="tool-card h-100">
-
-            <div class="feature-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-
-            <h4>Secure</h4>
-
-            <p>
-              Data aman dan diproses langsung di browser pengguna.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
+</div>
