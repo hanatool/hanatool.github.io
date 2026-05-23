@@ -1,157 +1,919 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-{% assign now = site.time | date: "%s" %}
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <title>Hanapha Tools - Free Online Tools Collection</title>
+    <meta name="description"
+        content="Hanapha Tools provides free online tools including AI tools, PDF tools, developer tools, image tools, SEO tools, security tools, utility tools, text tools, and much more.">
+    <meta name="keywords"
+        content="online tools, free tools, developer tools, pdf tools, image tools, ai tools, seo tools, utility tools">
+    <meta name="author" content="Hanapha Tools">
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="https://hanapha.com/banner/popunder.js"></script>
+</head>
 
-<div class="row g-3" id="post-container">
-
-  {% assign visible_count = 0 %}
-
-  {% for post in paginator.posts %}
-
-  {% assign publish_time = post.publish_at | date: "%s" %}
-
-  {% if post.publish_at == nil or publish_time <= now %}
-
-  {% assign visible_count = visible_count | plus: 1 %}
-
-  <div class="col-12 col-md-6 col-lg-4 post-item" data-category="{{ post.categories | join: ' ' }}">
-
-    <div class="card border border-1 bg-light h-100 card-hover shadow-none">
-
-      <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
-
-        {% if post.image %}
-        <div class="overflow-hidden position-relative">
-
-          {% assign post_time = post.date | date: "%s" %}
-          {% assign diff = now | minus: post_time %}
-
-          {% if diff < 604800 %}
-          <span class="badge bg-danger position-absolute m-2">NEW</span>
-          {% endif %}
-
-          <img src="{{ post.image | relative_url }}" class="card-img-top" style="aspect-ratio: 4/3; object-fit: cover;"
-            loading="lazy">
+<body class="bg-light text-dark">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold " href="/">
+                <i class="fa-solid fa-toolbox text-primary me-2"></i>
+                Hanapha Tools
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">
+                            Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popular">
+                            Popular Tools
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        {% endif %}
-
-        <div class="card-body">
-          <h4 class="fw-semibold mb-2 text-capitalize">
-            {{ post.title }}
-          </h4>
-
-          <small class="text-muted d-block mb-2">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </small>
-
-          <p class="excerpt">
-            {{ post.excerpt | strip_html | truncate: 100 }}
-          </p>
+    </nav>
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <div class="mb-3">
+                <span class="badge bg-primary px-3 py-2">
+                    100+ Free Online Tools
+                </span>
+            </div>
+            <h1 class="fw-bold display-5 mb-3">
+                Modern Free Online Tools Collection
+            </h1>
+            <p class="text-muted col-lg-8 mx-auto mb-4">
+                Discover powerful online tools for developers, creators,
+                marketers, students, businesses, SEO experts,
+                productivity workflows, AI generation, image editing,
+                PDF processing, and more.
+            </p>
+            <!-- SEARCH -->
+            <div class="col-lg-6 mx-auto">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-white">
+                        <i class="fa-solid fa-magnifying-glass text-primary"></i>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control"
+                        placeholder="Search tools and categories...">
+                </div>
+            </div>
         </div>
-
-      </a>
-
+    </section>
+    <!-- ADS -->
+    <div class="container my-4">
+        <div class="overflow-hidden text-center">
+            <script src="https://hanapha.com/banner/nativ.js"></script>
+        </div>
     </div>
+    <!-- POPULAR -->
+    <section class="container mb-5" id="popular">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">
+                Popular Tools
+            </h2>
+            <span class="badge bg-success">
+                Trending
+            </span>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <a href="https://tools.hanapha.com/developer-tools/color-picker" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="bg-primary text-white rounded d-inline-flex align-items-center justify-content-center"
+                                    style="width:60px;height:60px;">
+                                    <i class="fa-solid fa-palette fs-3"></i>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold text-dark">
+                                Color Picker
+                            </h5>
+                            <p class="text-muted mb-0">
+                                Generate HEX, RGB, and color palettes instantly.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="https://tools.hanapha.com/pdf-tools/pdf-merger" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="bg-danger text-white rounded d-inline-flex align-items-center justify-content-center"
+                                    style="width:60px;height:60px;">
+                                    <i class="fa-solid fa-file-pdf fs-3"></i>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold text-dark">
+                                PDF Merger
+                            </h5>
+                            <p class="text-muted mb-0">
+                                Merge multiple PDF files quickly online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="https://tools.hanapha.com/image-tools/background-remover" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="bg-success text-white rounded d-inline-flex align-items-center justify-content-center"
+                                    style="width:60px;height:60px;">
+                                    <i class="fa-solid fa-image fs-3"></i>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold text-dark">
+                                Background Remover
+                            </h5>
+                            <p class="text-muted mb-0">
+                                Remove image backgrounds automatically online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <a href="https://tools.hanapha.com/text-tools/gmail-dot-trick" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <div class="bg-warning text-white rounded d-inline-flex align-items-center justify-content-center"
+                                    style="width:60px;height:60px;">
+                                    <i class="fa-brands fa-google fs-3"></i>
+                                </div>
+                            </div>
+                            <h5 class="fw-bold text-dark">
+                                Gmail Dot Trick
+                            </h5>
+                            <p class="text-muted mb-0">
+                                Generate Gmail variations using the dot trick.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- CATEGORIES -->
+    <section class="container mb-5" id="categories">
+        <h2 class="fw-bold mb-4">
+            Tool Categories
+        </h2>
+        <div class="row g-4">
+            <!-- AI -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                AI Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/ai-modern-tools/ai-content-detector"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                AI Content Detector
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/ai-prompt-optimizer"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                AI Prompt Optimizer
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/blog-title-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Blog Title Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/hashtag-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Hashtag Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/json-ai-formatter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                JSON AI Formatter
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/prompt-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Prompt Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/sql-query-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                SQL Query Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/ai-modern-tools/youtube-title-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                YouTube Title Generator
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DEVELOPER -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-dark text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                Developer Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/developer-tools/json-formatter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                JSON Formatter
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/json-validator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                JSON Validator
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/color-picker"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Color Picker
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/javascript-obfuscator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                JavaScript Obfuscator
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/regex-tester"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Regex Tester
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/uuid-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                UUID Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/base64-encoder-decoder"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Base64 Encoder Decoder
+                            </a>
+                            <a href="https://tools.hanapha.com/developer-tools/yaml-json-converter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                YAML JSON Converter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGE -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                Image Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/image-tools/background-remover"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Background Remover
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/image-compressor"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Image Compressor
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/image-resizer"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Image Resizer
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/ocr-image-to-text"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                OCR Image to Text
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/png-to-jpg"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PNG to JPG
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/webp-to-jpg"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                WEBP to JPG
+                            </a>
+                            <a href="https://tools.hanapha.com/image-tools/svg-to-png-converter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                SVG to PNG Converter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PDF -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-danger text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                PDF Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/pdf-tools/pdf-compressor"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PDF Compressor
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/pdf-merger"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PDF Merger
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/pdf-splitter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PDF Splitter
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/pdf-to-word"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PDF to Word
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/pdf-to-image"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                PDF to Image
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/word-to-pdf"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Word to PDF
+                            </a>
+                            <a href="https://tools.hanapha.com/pdf-tools/html-to-pdf"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                HTML to PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SEO -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-warning text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                SEO Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/seo-tools/meta-tag-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Meta Tag Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/seo-tools/sitemap-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Sitemap Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/seo-tools/schema-markup-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Schema Markup Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/seo-tools/serp-preview-tool"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                SERP Preview Tool
+                            </a>
+                            <a href="https://tools.hanapha.com/seo-tools/robots-txt-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Robots.txt Generator
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TEXT -->
+            <div class="col-lg-4 tool-card">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-info text-white rounded p-3 me-3">
+                                <i class="fa-solid fa-font"></i>
+                            </div>
+                            <h4 class="fw-bold mb-0">
+                                Text Tools
+                            </h4>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="https://tools.hanapha.com/text-tools/word-counter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Word Counter
+                            </a>
+                            <a href="https://tools.hanapha.com/text-tools/case-converter"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Case Converter
+                            </a>
+                            <a href="https://tools.hanapha.com/text-tools/reverse-text"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Reverse Text
+                            </a>
+                            <a href="https://tools.hanapha.com/text-tools/fancy-text-generator"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Fancy Text Generator
+                            </a>
+                            <a href="https://tools.hanapha.com/text-tools/remove-empty-lines"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Remove Empty Lines
+                            </a>
+                            <a href="https://tools.hanapha.com/text-tools/gmail-dot-trick"
+                                class="list-group-item list-group-item-action border-0 px-0">
+                                Gmail Dot Trick
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ALL CATEGORIES -->
+    <section class="container mb-5" id="categories">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">
+                All Tool Categories
+            </h2>
+            <span class="badge bg-primary">
+                15 Categories
+            </span>
+        </div>
+        <div class="row g-4">
+            <!-- AI MODERN TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/ai-modern-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        AI Modern Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                AI generators, prompt tools, content detectors,
+                                title generators, and smart automation utilities.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- ARCHIVE TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/archive-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-box-archive"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Archive Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Compress, extract, convert, and manage archive files easily online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- AUDIO TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/audio-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-success text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-music"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Audio Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Convert, trim, boost, record, and edit audio files online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- DEVELOPER TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/developer-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-dark text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Developer Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                JSON formatter, regex tester, code beautifier,
+                                encoder tools, and developer utilities.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- DOCUMENT TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/document-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-warning text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-file-lines"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Document Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Convert, compare, edit, and manage documents online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- FILE TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/file-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-info text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        File Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                PDF converters, ZIP extractors, and file processing tools.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- IMAGE TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/image-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-success text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-image"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Image Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Compress, resize, crop, convert, watermark,
+                                and enhance images online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- NETWORK TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/network-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Network Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                DNS lookup, ping checker, IP geolocation,
+                                traceroute, and WHOIS tools.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- PDF TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/pdf-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        PDF Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Merge, split, compress, convert,
+                                watermark, and edit PDF files online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- PRODUCTIVITY TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/productivity-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Productivity Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                To-do lists, notes, planners,
+                                invoice generators, and workflow tools.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- SECURITY TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/security-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-dark text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Security Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Password generators, hash generators,
+                                encryption tools, and SSL checkers.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- SEO TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/seo-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-warning text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        SEO Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Meta tags, schema markup, sitemap generators,
+                                SERP preview, and SEO analyzers.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- TEXT TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/text-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-info text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-font"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Text Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Word counters, text generators,
+                                duplicate removers, and typing tools.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- UTILITY TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/utility-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Utility Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                QR generators, calculators, converters,
+                                timers, and daily utility tools.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- VIDEO TOOLS -->
+            <div class="col-md-6 col-lg-4 tool-card">
+                <a href="https://tools.hanapha.com/video-tools" class="text-decoration-none">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary text-white rounded p-3 me-3">
+                                    <i class="fa-solid fa-video"></i>
+                                </div>
+                                <div>
+                                    <h4 class="fw-bold text-dark mb-0">
+                                        Video Tools
+                                    </h4>
+                                </div>
+                            </div>
+                            <p class="text-muted mb-0">
+                                Convert, compress, trim,
+                                subtitle, and edit video files online.
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- DESCRIPTION -->
+    <section class="container mb-5">
+        <div class="bg-white border rounded p-4">
+            <h3 class="fw-bold mb-3">
+                About Hanapha Tools
+            </h3>
+            <p class="text-muted mb-0">
+                Hanapha Tools is a complete modern online tools platform
+                designed to help developers, creators, marketers,
+                students, businesses, and everyday users work faster
+                and smarter. Our tools are responsive, secure,
+                easy to use, and accessible from any device.
+            </p>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        Hanapha Tools
+                    </h5>
+                    <p class="text-muted">
+                        Free modern online tools collection for productivity,
+                        SEO, AI, PDF, image editing, and developers.
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">
+                        Categories
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="https://tools.hanapha.com/developer-tools/"
+                                class="text-decoration-none text-muted">
+                                Developer Tools
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://tools.hanapha.com/image-tools/" class="text-decoration-none text-muted">
+                                Image Tools
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://tools.hanapha.com/pdf-tools/" class="text-decoration-none text-muted">
+                                PDF Tools
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://tools.hanapha.com/seo-tools/" class="text-decoration-none text-muted">
+                                SEO Tools
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">
+                        Quick Links
+                    </h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="/" class="text-decoration-none text-muted">
+                                Home
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/privacy/" class="text-decoration-none text-muted">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="/contact/" class="text-decoration-none text-muted">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted">
+                Supported © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> <a href="https://hanapha.com/"
+                    class="text-danger me-2 fw-bold text-decoration-none">Hanapha</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SEARCH -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const toolCards = document.querySelectorAll('.tool-card');
+        searchInput.addEventListener('keyup', function () {
+            const value = this.value.toLowerCase();
+            toolCards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if (text.includes(value)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="https://hanapha.com/banner/socialbar.js"></script>
+</body>
 
-  </div>
-
-  {% endif %}
-
-  {% endfor %}
-
-  {% if visible_count == 0 %}
-  <div class="col-12 text-center text-muted py-5">
-    No posts available yet.
-  </div>
-  {% endif %}
-
-</div>
-
-<!-- PAGINATION -->
-<div class="container mt-5">
-
-  {% if paginator.total_pages > 1 %}
-
-  <nav>
-    <ul class="pagination justify-content-center">
-
-      <!-- PREV -->
-      {% if paginator.previous_page %}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">&laquo;</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled">
-        <span class="page-link">&laquo;</span>
-      </li>
-      {% endif %}
-
-      {% assign total = paginator.total_pages %}
-      {% assign current = paginator.page %}
-      {% assign delta = 2 %}
-
-      {% assign start = current | minus: delta %}
-      {% assign end = current | plus: delta %}
-
-      {% if start < 1 %}{% assign start = 1 %}{% endif %}
-      {% if end > total %}{% assign end = total %}{% endif %}
-
-      {% if start > 1 %}
-      <li class="page-item">
-        <a class="page-link" href="{{ '/' | relative_url }}">1</a>
-      </li>
-
-      {% if start > 2 %}
-      <li class="page-item disabled">
-        <span class="page-link">...</span>
-      </li>
-      {% endif %}
-      {% endif %}
-
-      {% for page in (start..end) %}
-      {% if page == current %}
-      <li class="page-item active">
-        <span class="page-link">{{ page }}</span>
-      </li>
-      {% else %}
-      <li class="page-item">
-        <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
-          {{ page }}
-        </a>
-      </li>
-      {% endif %}
-      {% endfor %}
-
-      {% if end < total %}
-      {% if end < total | minus: 1 %}
-      <li class="page-item disabled">
-        <span class="page-link">...</span>
-      </li>
-      {% endif %}
-
-      <li class="page-item">
-        <a class="page-link" href="{{ site.paginate_path | relative_url | replace: ':num', total }}">
-          {{ total }}
-        </a>
-      </li>
-      {% endif %}
-
-      <!-- NEXT -->
-      {% if paginator.next_page %}
-      <li class="page-item">
-        <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">&raquo;</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled">
-        <span class="page-link">&raquo;</span>
-      </li>
-      {% endif %}
-
-    </ul>
-  </nav>
-
-  {% endif %}
-
-</div>
+</html>
